@@ -49,9 +49,6 @@ html,body{
 .home .row .card:hover .icon ,.navbar-brand:hover{
     transform: scale(1.2) rotate(-8deg);
 }
-.nav-link:hover{
-    transform: rotate(-2deg);
-}
 
 /* hero */
 .hero-card{
