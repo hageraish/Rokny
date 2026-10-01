@@ -37,7 +37,20 @@
         <button id="loginBtn" type="button" style="background-color: #6d4aff; border-color: #6d4aff; color: #fff" class="btn  me-2 mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-i18n="login">
           Login
         </button>
-        <form id="loginForm" novalidate>
+        <!-- signup -->
+        <!-- Button trigger modal -->
+        <button id="signupBtn" style="color: #6d4aff; border-color: #6d4aff;" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#signupModal" data-i18n="signup">
+          Sign Up
+        </button>
+        <span id="userName" class="navbar-text me-3 fw-semibold" style="color: #6d4aff"></span>
+        <button id="logoutBtn" type="button" class="btn btn-outline-danger me-2 mb-2" data-i18n="logout" hidden>Log out</button>
+        <button id="langBtn" class="btn btn-outline-secondary me-2 mb-2" type="button">English</button>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- login form -->
+   <form id="loginForm" novalidate>
           <!-- Modal -->
           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -66,11 +79,7 @@
             </div>
           </div>
         </form>
-        <!-- signup -->
-        <!-- Button trigger modal -->
-        <button id="signupBtn" style="color: #6d4aff; border-color: #6d4aff;" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#signupModal" data-i18n="signup">
-          Sign Up
-        </button>
+        <!-- signup form -->
         <form id="signupForm" novalidate>
           <!-- Modal -->
           <div class="modal fade" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
@@ -103,13 +112,6 @@
             </div>
           </div>
         </form>
-        <span id="userName" class="navbar-text me-3 fw-semibold" style="color: #6d4aff"></span>
-        <button id="logoutBtn" type="button" class="btn btn-outline-danger me-2 mb-2" data-i18n="logout" hidden>Log out</button>
-        <button id="langBtn" class="btn btn-outline-secondary me-2 mb-2" type="button">English</button>
-      </div>
-    </div>
-  </div>
-  </nav>
   <!-- home -->
   <section class="home" style="background-color: #12141c">
     <div class="container">
@@ -129,38 +131,38 @@
         <div class="card-body">
           <h5 class="card-title hero-title mb-4" data-i18n="heroTitle">أهلاً بك في رُكني</h5>
           <p class="card-text mb-4" data-i18n="heroText">مكان صغير فيه كل حاجة بسيطة تفرّحك: لعبة تلعبها، رقم تخمّنه، ومهام تنظّم بيها يومك.</p>
-          <a href="./xo.html" class="btn btn-primary game-link" data-i18n="startBtn">ابدأ اللعب</a>
+          <a href="./xo.html" id="startBtn" class="btn btn-primary" data-i18n="startBtn">ابدأ اللعب</a>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <a href="./xo.html" class="card h-100 text-decoration-none game-link">
             <div class="card-body">
               <div class="icon mb-3">❌⭕</div>
               <h5 class="card-title" data-i18n="cardXOTitle">لعبة XO</h5>
               <p class="card-text" data-i18n="cardXOText">تحدّى صاحبك أو أخوك في جولات سريعة، والنقاط بتتحسب لوحدها.</p>
             </div>
-          </div>  
+          </a>  
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <a href="./guess.html" class="card h-100 text-decoration-none game-link">
             <div class="card-body">
               <div class="icon mb-3">🔢</div>
               <h5 class="card-title" data-i18n="cardGuessTitle">خمّن الرقم</h5>
               <p class="card-text" data-i18n="cardGuessText">رقم مخفي من 1 لـ 100، وأنا هساعدك بتلميحات لحد ما توصله.</p>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
-          <div class="card">
+          <a href="./to-do.html" class="card h-100 text-decoration-none game-link">
             <div class="card-body">
               <div class="icon mb-3">📝</div>
               <h5 class="card-title" data-i18n="cardTodoTitle">قائمة المهام</h5>
               <p class="card-text" data-i18n="cardTodoText">اكتب مهامك وخلّصها واحدة واحدة، وهتفضل محفوظة في متصفحك.</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
