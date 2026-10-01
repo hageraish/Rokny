@@ -558,6 +558,18 @@ for (var g = 0; g < gameLinks.length; g++){
   });
 }
 
+// زر ابدأ اللعب: مسجل دخول يفتح XO، غير كده يفتح نافذة Login
+var startBtnEl = document.getElementById("startBtn");
+if (startBtnEl){
+  startBtnEl.addEventListener("click", function(e){
+    if (!currentUser){
+      e.preventDefault();
+      pendingUrl = "";
+      openLogin(false);
+    }
+  });
+}
+
 // تسجيل الخروج
 var logoutBtnEl2 = document.getElementById("logoutBtn");
 if (logoutBtnEl2){
