@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="titleTodo">قائمة المهام</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link id="bs-css" rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        if (!localStorage.getItem("session")){
+            location.replace("./index.html?login=1");
+        }
+    </script>
+</head>
+<body>
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #1c1f2b;">
+    <div class="container-fluid ms-5">
+        <a class="navbar-brand me-5" href="./index.html" data-i18n="titleHome" style="color: #6d4aff">رُكني | Rokny</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active me-4" aria-current="page" href="./index.html" data-i18n="navHome" style="color: white">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-4" href="./xo.html" target="_blank" data-i18n="navXO" style="color: white">XO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./guess.html" target="_blank" data-i18n="navGuess" style="color: white">Guess The Number</a>
+                </li>
+            </ul>
+            <div class="navbar-nav me-5">
+            <!-- log out -->
+            <!-- Button trigger modal -->
+                <span id="userName" class="navbar-text me-3 fw-semibold" style="color: #6d4aff"></span>
+                <button id="logoutBtn" type="button" class="btn btn-outline-danger me-2" data-i18n="logout" hidden>Log Out</button>
+                <button id="langBtn" class="btn btn-outline-secondary me-2" type="button">English</button>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- to-do-list -->
+    <div class="container">
+        <h2 data-i18n="todoTitle">قائمة المهام 📝</h2>
+        <div id="todo">
+            <div class="input-group mb-3">
+            <input type="text" id="taskInput" class="form-control" data-i18n-ph="taskPh" placeholder="اكتب مهمة جديدة"
+                onkeyup="if(event.key==='Enter'){
+                    addTask();
+                }">
+            <button class="btn btn-primary" onclick="addTask()" data-i18n="add">Add</button>
+        </div>
+        <ul id="taskList" class="list-group mb-3"></ul>
+        <div id="empty" data-i18n="empty">مفيش مهام لسه.<br> ضيف أول مهمة!</div>
+        <div class="left py-3"><span data-i18n="left">المتبقي</span>:  <b id="left">0</b></div>
+        </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

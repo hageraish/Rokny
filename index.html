@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="titleHome">رُكني | Rokny</title>
+  <link rel="stylesheet" href="./css/all.min.css">
+  <link id="bs-css" rel="stylesheet" href="./css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #1c1f2b;">
+  <div class="container-fluid ms-5">
+    <a class="navbar-brand me-5" href="./index.html" data-i18n="titleHome" style="color: #6d4aff">رُكني | Rokny</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active me-4" aria-current="page" href="./index.html" data-i18n="navHome" style="color: white">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-4 game-link" href="./xo.html" data-i18n="navXO" style="color: white">XO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-4 game-link" href="./guess.html" data-i18n="navGuess" style="color: white">Guess The Number</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link game-link" href="./to-do.html" data-i18n="navTodo" style="color: white">To-Do-List</a>
+        </li>
+      </ul>
+      <div class="navbar-nav me-5">
+        <!-- login -->
+        <!-- Button trigger modal -->
+        <button id="loginBtn" type="button" style="background-color: #6d4aff; border-color: #6d4aff; color: #fff" class="btn  me-2 mb-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-i18n="login">
+          Login
+        </button>
+        <form id="loginForm" novalidate>
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel" data-i18n="login">Login</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="loginNotice" class="alert alert-warning py-2 small" hidden data-i18n="needLogin">Please log in first to start playing.</p>
+                  <div class="input-group flex-nowrap mb-3">
+                    <span class="input-group-text"><i class="fa-solid fa-circle-user"></i></span>
+                    <input type="text" id="loginName" class="form-control" data-i18n-ph="username" placeholder="Username" aria-label="Username">
+                  </div>
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-user-lock"></i></span>
+                    <input type="password" id="loginPass" class="form-control" data-i18n-ph="password" placeholder="Password" aria-label="Password">
+                  </div>
+                  <div id="loginErr" class="text-danger small mt-2"></div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#signupModal" data-i18n="noAccount">No Account? Sign up</a>
+                  <button type="submit" class="btn btn-primary" style="background-color: #6d4aff; border-color: #6d4aff; color: #fff" data-i18n="login">Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- signup -->
+        <!-- Button trigger modal -->
+        <button id="signupBtn" style="color: #6d4aff; border-color: #6d4aff;" class="btn mb-2" data-bs-toggle="modal" data-bs-target="#signupModal" data-i18n="signup">
+          Sign Up
+        </button>
+        <form id="signupForm" novalidate>
+          <!-- Modal -->
+          <div class="modal fade" id="signupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="signupLabel" data-i18n="signup">Sign Up</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group flex-nowrap mb-3">
+                    <span class="input-group-text"><i class="fa-solid fa-circle-user"></i></span>
+                    <input type="text" id="signupName" class="form-control" data-i18n-ph="username" placeholder="Username" aria-label="Username">
+                  </div>
+                  <div class="input-group flex-nowrap mb-3">
+                    <span class="input-group-text"><i class="fa-solid fa-user-lock"></i></span>
+                    <input type="password" id="signupPass" class="form-control" data-i18n-ph="password" placeholder="Password" aria-label="Password">
+                  </div>
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="signupConfirm" class="form-control" data-i18n-ph="confirm" placeholder="Confirm Password" aria-label="Confirm Password">
+                  </div>
+                  <div id="signupErr" class="text-danger small mt-2"></div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-i18n="haveAccount">Have An Account? Login</a>
+                  <button type="submit" class="btn btn-primary" style="background-color: #6d4aff; border-color: #6d4aff; color: #fff" data-i18n="signup">Sign Up</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <span id="userName" class="navbar-text me-3 fw-semibold" style="color: #6d4aff"></span>
+        <button id="logoutBtn" type="button" class="btn btn-outline-danger me-2 mb-2" data-i18n="logout" hidden>Log out</button>
+        <button id="langBtn" class="btn btn-outline-secondary me-2 mb-2" type="button">English</button>
+      </div>
+    </div>
+  </div>
+  </nav>
+  <!-- home -->
+  <section class="home" style="background-color: #12141c">
+    <div class="container">
+      <div class="card text-center my-4 py-5 hero-card">
+        <div class="floaters" aria-hidden="true">
+        <span style="--x:4%;--d:-1s;--t:7s">X</span>
+        <span style="--x:15%;--d:-4s;--t:6s">O</span>
+        <span style="--x:26%;--d:-2s;--t:8s">?</span>
+        <span style="--x:37%;--d:-5s;--t:6.5s">7</span>
+        <span style="--x:48%;--d:-3s;--t:7.5s">2</span>
+        <span style="--x:59%;--d:-6s;--t:6s">X</span>
+        <span style="--x:70%;--d:-1.5s;--t:8s">O</span>
+        <span style="--x:80%;--d:-4.5s;--t:7s">?</span>
+        <span style="--x:90%;--d:-2.5s;--t:6.5s">7</span>
+        <span style="--x:96%;--d:-5.5s;--t:7.5s">2</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title hero-title mb-4" data-i18n="heroTitle">أهلاً بك في رُكني</h5>
+          <p class="card-text mb-4" data-i18n="heroText">مكان صغير فيه كل حاجة بسيطة تفرّحك: لعبة تلعبها، رقم تخمّنه، ومهام تنظّم بيها يومك.</p>
+          <a href="./xo.html" class="btn btn-primary game-link" data-i18n="startBtn">ابدأ اللعب</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon mb-3">❌⭕</div>
+              <h5 class="card-title" data-i18n="cardXOTitle">لعبة XO</h5>
+              <p class="card-text" data-i18n="cardXOText">تحدّى صاحبك أو أخوك في جولات سريعة، والنقاط بتتحسب لوحدها.</p>
+            </div>
+          </div>  
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon mb-3">🔢</div>
+              <h5 class="card-title" data-i18n="cardGuessTitle">خمّن الرقم</h5>
+              <p class="card-text" data-i18n="cardGuessText">رقم مخفي من 1 لـ 100، وأنا هساعدك بتلميحات لحد ما توصله.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="icon mb-3">📝</div>
+              <h5 class="card-title" data-i18n="cardTodoTitle">قائمة المهام</h5>
+              <p class="card-text" data-i18n="cardTodoText">اكتب مهامك وخلّصها واحدة واحدة، وهتفضل محفوظة في متصفحك.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer class="text-center mt-5">
+    <p data-i18n="footer">© 2026 جميع الحقوق محفوظة</p>
+  </footer>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
